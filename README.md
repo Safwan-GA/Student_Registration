@@ -16,6 +16,9 @@ A simple web-based student registration form built using HTML, CSS, and JavaScri
 
 ## Getting Started
 
-1. Clone the repository:
+1. Clone the repository and move to the folder:
    ```bash
    git clone https://github.com/Safwan-GA/Student_Registration.git
+   cd Student_Registration
+
+
