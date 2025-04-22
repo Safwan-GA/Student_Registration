@@ -1,0 +1,264 @@
+body {
+    background-color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .gradient-text {
+    display: inline-block;
+    background: linear-gradient(to right, #00f, #0ff, #0f0, #ff0, #f00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  header, #infoSection div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  #formSection, #infoSection {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* background-color: #f9f9f9; */
+  }
+  
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  form div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form div label {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  form div input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form button {
+    grid-column: span 2;
+    height: 40px;
+    width: 120px;
+    margin: 20px auto;
+    background-color: rgb(0, 191, 255);
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: rgb(0, 160, 220);
+  }
+  
+  .table-container {
+    max-height: 100px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #infoSection table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  #infoSection th, #infoSection td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  #infoSection th {
+    background-color: #3498db;
+    color: white;
+  }
+  #infoSection tr {
+    transition: transform 0.3s ease;
+  }
+  #infoSection tr:hover {
+    transform: scale(1.02) translateY(-10px);
+  }
+  
+  .actions button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .actions .edit {
+    background-color: #2ecc71;
+  }
+  
+  .actions .delete {
+    background-color: #e74c3c;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px; 
+    /* padding: 10px 16px; */
+    background-color: var(--bg-color, white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Make links look like buttons */
+  nav a {
+    text-decoration: none;
+    color: var(--text-color, #333);
+    background-color: var(--button-bg, #3498db);
+    padding: 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  nav a:hover {
+    background-color: var(--button-hover-bg, #2980b9);
+    color: white;
+  }
+  
+  nav button {
+    padding: 8px;
+    background-color: var(--button-bg, #3498db);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  nav button:hover {
+    background-color: var(--button-hover-bg, #2980b9);
+  }
+  
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    form {
+      grid-template-columns: 1fr;
+    }
+  
+    form button {
+      grid-column: span 1;
+      width: 100%;
+    }
+  
+    #formSection, #infoSection {
+      padding: 10px;
+      margin: 10px;
+    }
+    #infoSection table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+  
+    #infoSection th, #infoSection td {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  
+    .actions button {
+      padding: 4px 8px;
+      font-size: 0.8rem;
+    }
+  
+    header, #infoSection div {
+      padding: 10px;
+    }
+  
+    .gradient-text {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+
+/* === Theme toggle === */
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --form-bg: #f9f9f9;
+    --table-bg: #fff;
+    --header-bg: #fff;
+  }
+  
+  body.dark-theme {
+    --bg-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --form-bg: #2a2a2a;
+    --table-bg: #333;
+    --header-bg: #2e2e2e;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  #formSection, #infoSection {
+    background-color: var(--form-bg);
+  }
+  
+  #infoSection table {
+    background-color: var(--table-bg);
+  }
+  
+  header, #infoSection div {
+    background-color: var(--header-bg);
+  }
+  
+  #themeToggle {
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+  }
+  
+  body.dark-theme #themeToggle {
+    background-color: #ddd;
+    color: black;
+  }
+  #themeToggle::before {
+    content: "Dark";
+  }
+  body.dark-theme #themeToggle::before {
+    content: "Light";
+  }
